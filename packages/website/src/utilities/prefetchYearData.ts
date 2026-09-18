@@ -10,7 +10,7 @@ import {
     readAllRecordLabelsRouteDefinition,
     readAllRecordRowsRouteDefinition,
     readAllRecordsRouteDefinition,
-} from "@arrhes/application-metadata/routes"
+} from "@comptasse/application-metadata/routes"
 import type * as v from "valibot"
 import { dataClient } from "../contexts/data/queryClient.js"
 import { getResponseBodyFromAPI } from "./getResponseBodyFromAPI.js"
@@ -22,8 +22,8 @@ type YearScopedRouteDefinition = {
     schemas: {
         body: v.ObjectSchema<v.ObjectEntries, undefined>
         return:
-        | v.ObjectSchema<v.ObjectEntries, undefined>
-        | v.ArraySchema<v.ObjectSchema<v.ObjectEntries, undefined>, undefined>
+            | v.ObjectSchema<v.ObjectEntries, undefined>
+            | v.ArraySchema<v.ObjectSchema<v.ObjectEntries, undefined>, undefined>
     }
 }
 

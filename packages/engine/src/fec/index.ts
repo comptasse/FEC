@@ -1,44 +1,41 @@
+export {
+    checkChronologicalOrder,
+    checkColumnCount,
+    checkColumnOrder,
+    checkCompteNum,
+    checkDateFormat,
+    checkDateValidity,
+    checkDateYearRange,
+    checkDebitCredit,
+    checkDebitCreditBalance,
+    checkDebitCreditExclusive,
+    checkEcritureNumSequence,
+    checkEmptyFile,
+    checkEmptyLines,
+    checkEncoding,
+    checkFieldCountMismatch,
+    checkFileName,
+    checkHeaderPresence,
+    checkMandatoryFields,
+    checkNumericDotSeparator,
+    checkNumericFormat,
+    checkNumericThousandsSeparator,
+    checkOpeningEntries,
+    checkPieceDateCoherence,
+    checkSensValues,
+    checkSeparator,
+} from "./checks.js"
+export { parseFlatFile } from "./parseFlatFile.js"
+export { parseXmlFile } from "./parseXmlFile.js"
 export type {
-    FecCheckSeverity,
     FecCheckResult,
-    FecValidationSummary,
-    FecValidationResult,
+    FecCheckSeverity,
     FecColumnDefinition,
     FecEntry,
     FecParsedFile,
     FecParsedLineIssue,
+    FecValidationResult,
+    FecValidationSummary,
 } from "./types.js"
-
-export { BIC_COLUMNS, BIC_COLUMN_NAMES } from "./types.js"
-
-export { parseFlatFile } from "./parseFlatFile.js"
-export { parseXmlFile } from "./parseXmlFile.js"
+export { BIC_COLUMN_NAMES, BIC_COLUMNS } from "./types.js"
 export { validateFecFile } from "./validate.js"
-
-export {
-    checkFileName,
-    checkHeaderPresence,
-    checkColumnOrder,
-    checkColumnCount,
-    checkSeparator,
-    checkDateFormat,
-    checkNumericFormat,
-    checkCompteNum,
-    checkMandatoryFields,
-    checkDebitCredit,
-    checkSensValues,
-    checkChronologicalOrder,
-    checkEcritureNumSequence,
-    checkOpeningEntries,
-    checkDebitCreditBalance,
-    checkEncoding,
-    checkEmptyFile,
-    checkDateValidity,
-    checkPieceDateCoherence,
-    checkFieldCountMismatch,
-    checkEmptyLines,
-    checkDebitCreditExclusive,
-    checkNumericDotSeparator,
-    checkNumericThousandsSeparator,
-    checkDateYearRange,
-} from "./checks.js"

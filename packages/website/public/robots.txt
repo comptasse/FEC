@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /assets/
 
-Sitemap: https://fec.arrhes.com/sitemap.xml
+Sitemap: https://fec.comptasse.com/sitemap.xml

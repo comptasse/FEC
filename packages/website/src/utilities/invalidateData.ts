@@ -1,4 +1,4 @@
-import type { routeDefinition } from "@arrhes/application-metadata/utilities"
+import type { routeDefinition } from "@comptasse/application-metadata/utilities"
 import type * as v from "valibot"
 import { dataClient } from "../contexts/data/queryClient.js"
 

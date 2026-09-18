@@ -6,7 +6,7 @@ export const homeRootRoute = createRoute({
     getParentRoute: () => homeLayoutRoute,
     path: "/",
     beforeLoad: () => ({
-        title: "FEC - Arrhes",
+        title: "FEC - Comptasse",
         description:
             "Validez votre Fichier des Écritures Comptables (FEC) selon l'article A47 A-1 du Livre des procédures fiscales. Gratuit, open source, 100\u00a0% local.",
     }),

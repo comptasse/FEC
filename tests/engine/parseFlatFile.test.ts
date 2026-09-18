@@ -144,7 +144,7 @@ describe("parseFlatFile", () => {
             const result = parseFlatFile(content, "whitespace.txt")
 
             expect(result.headers[0]).toBe("A")
-            expect(result.entries[0]!["A"]).toBe("1")
+            expect(result.entries[0]!.A).toBe("1")
         })
     })
 

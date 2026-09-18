@@ -23,9 +23,7 @@
         "jsx": "react-jsx",
         /* Linting */
         "strict": true,
-        "noFallthroughCasesInSwitch": true,
-        /* Path aliases */
-        "baseUrl": "."
+        "noFallthroughCasesInSwitch": true
     },
     "include": ["src"],
     "exclude": [

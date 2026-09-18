@@ -222,7 +222,7 @@ function buildXml(journals, dateCloture) {
     parts.push(`${indent(1)}</exercice>`)
     parts.push("</comptabilite>")
 
-    return parts.join("\n") + "\n"
+    return `${parts.join("\n")}\n`
 }
 
 // ---------------------------------------------------------------------------

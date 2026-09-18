@@ -1,7 +1,6 @@
-import type { FecValidationResult } from "@arrhes/fec-engine"
+import type { FecValidationResult } from "@comptasse/fec-engine"
 import { css } from "../../../styled-system/css/css"
 import { CheckItem } from "./checkItem.tsx"
-
 
 export function ResultSummary({ result }: { result: FecValidationResult }) {
     const hasErrors = result.summary.errors > 0
@@ -100,7 +99,9 @@ export function ResultSummary({ result }: { result: FecValidationResult }) {
                         color: "neutral/60",
                     })}
                 >
-                    {result.summary.errors} erreur{result.summary.errors > 1 ? "s" : ""}, {result.summary.warnings} avertissement{result.summary.warnings > 1 ? "s" : ""} sur {result.summary.lines} ligne{result.summary.lines > 1 ? "s" : ""} analysée{result.summary.lines > 1 ? "s" : ""}
+                    {result.summary.errors} erreur{result.summary.errors > 1 ? "s" : ""}, {result.summary.warnings}{" "}
+                    avertissement{result.summary.warnings > 1 ? "s" : ""} sur {result.summary.lines} ligne
+                    {result.summary.lines > 1 ? "s" : ""} analysée{result.summary.lines > 1 ? "s" : ""}
                 </p>
 
                 {!hasErrors && (

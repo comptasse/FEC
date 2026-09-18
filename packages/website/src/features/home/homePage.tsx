@@ -1,5 +1,5 @@
-import type { FecValidationResult } from "@arrhes/fec-engine"
-import { validateFecFile } from "@arrhes/fec-engine"
+import type { FecValidationResult } from "@comptasse/fec-engine"
+import { validateFecFile } from "@comptasse/fec-engine"
 import { Fragment, useCallback, useRef, useState } from "react"
 import { css } from "../../../styled-system/css/css"
 import { LinkContent } from "../../components/buttons/linkContent.tsx"
@@ -168,8 +168,8 @@ export function HomePage() {
                         isProcessing
                             ? undefined
                             : (e) => {
-                                if (e.key === "Enter" || e.key === " ") handleClick()
-                            }
+                                  if (e.key === "Enter" || e.key === " ") handleClick()
+                              }
                     }
                     onDragOver={isProcessing ? undefined : handleDragOver}
                     onDragLeave={isProcessing ? undefined : handleDragLeave}
@@ -358,8 +358,8 @@ export function HomePage() {
                                     lineHeight: "1.6",
                                 })}
                             >
-                                Votre fichier est analysé directement dans votre navigateur.
-                                Aucune donnée n'est envoyée à un serveur.
+                                Votre fichier est analysé directement dans votre navigateur. Aucune donnée n'est envoyée
+                                à un serveur.
                             </p>
                         </div>
 
@@ -392,7 +392,15 @@ export function HomePage() {
                                     lineHeight: "1.6",
                                 })}
                             >
-                                Les vérifications sont basées sur l'<a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000027804775/" target="_blank" rel="noopener noreferrer"><LinkContent>article A47 A-1 du Livre des procédures fiscales</LinkContent></a>.
+                                Les vérifications sont basées sur l'
+                                <a
+                                    href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000027804775/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <LinkContent>article A47 A-1 du Livre des procédures fiscales</LinkContent>
+                                </a>
+                                .
                             </p>
                         </div>
 
@@ -425,8 +433,11 @@ export function HomePage() {
                                     lineHeight: "1.6",
                                 })}
                             >
-                                Le code source est disponible sur <a href="https://github.com/arrhes/fec" target="_blank" rel="noopener noreferrer"><LinkContent>GitHub</LinkContent></a>.
-                                sous licence AGPL-3.0.
+                                Le code source est disponible sur{" "}
+                                <a href="https://github.com/comptasse/fec" target="_blank" rel="noopener noreferrer">
+                                    <LinkContent>GitHub</LinkContent>
+                                </a>
+                                . sous licence AGPL-3.0.
                             </p>
                         </div>
                     </div>

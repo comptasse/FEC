@@ -1,5 +1,5 @@
 import { sva } from "../../../styled-system/css/sva"
-import { type ButtonContentProps, renderButtonContent } from "./buttonContent"
+import { type ButtonContentProps, useRenderButtonContent } from "./buttonContent"
 
 const outlineRecipe = sva({
     slots: ["container", "leftIcon", "text", "rightIcon"],
@@ -83,5 +83,5 @@ const outlineRecipe = sva({
 
 export function ButtonOutlineContent(props: ButtonContentProps) {
     const classes = outlineRecipe({ color: props.color ?? "neutral" })
-    return renderButtonContent(props, classes)
+    return useRenderButtonContent(props, classes)
 }

@@ -1,1 +1,1 @@
-export const cookiePrefix = "arrhes"
+export const cookiePrefix = "comptasse"

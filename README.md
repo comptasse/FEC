@@ -1,8 +1,8 @@
 # FEC
 
 [![Licence AGPL-3.0](https://img.shields.io/badge/licence-AGPL--3.0-blue.svg)](LICENSE)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-22-green.svg)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-7.0-blue.svg)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-24-green.svg)](https://nodejs.org/)
 
 Outil open source de validation de **Fichiers des Écritures Comptables** (FEC), conforme à l'[article A47 A-1 du Livre des procédures fiscales](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000027804775/).
 
@@ -52,28 +52,28 @@ Monorepo pnpm avec deux packages :
 ```
 packages/
   engine/       Moteur de validation FEC (TypeScript pur, aucune dépendance navigateur)
-  website/      Interface web (React 19, Vite 7, PandaCSS, TanStack Router)
+  website/      Interface web (React 19, Vite 8, PandaCSS, TanStack Router)
 ```
 
-### `@arrhes/fec-engine`
+### `@comptasse/fec-engine`
 
 Librairie TypeScript exportant les parseurs, validateurs et types FEC. Peut être utilisée indépendamment du site web.
 
 ```ts
-import { validateFecFile } from "@arrhes/fec-engine"
+import { validateFecFile } from "@comptasse/fec-engine"
 
 const result = validateFecFile(fileContent, "123456789FEC20240101.txt")
 // result.summary  -> { errors: 0, warnings: 2, total: 19, lines: 1042 }
 // result.checks   -> FecCheckResult[]
 ```
 
-### `@arrhes/fec-website`
+### `@comptasse/fec-website`
 
 Application React avec validation côté client. Le fichier est lu via `File.text()` et passé au moteur de validation directement dans le navigateur.
 
 ## Prérequis
 
-- [Node.js](https://nodejs.org/) >= 22
+- [Node.js](https://nodejs.org/) >= 24
 - [pnpm](https://pnpm.io/) >= 10
 - [Docker](https://docs.docker.com/get-docker/) et Docker Compose (pour le développement conteneurisé et le build de production)
 - [just](https://github.com/casey/just) (optionnel, raccourcis de commandes)
@@ -82,7 +82,7 @@ Application React avec validation côté client. Le fichier est lu via `File.tex
 
 ```bash
 # Cloner le dépôt
-git clone https://github.com/arrhes/fec.git
+git clone https://github.com/comptasse/fec.git
 cd fec
 
 # Installer les dépendances
@@ -143,10 +143,10 @@ Variables d'environnement requises (voir `workflows/build/.env.example`) :
 
 | Composant | Technologie |
 |-----------|-------------|
-| Langage | TypeScript 5.9 |
-| Runtime | Node.js 22 |
+| Langage | TypeScript 7.0 |
+| Runtime | Node.js 24 |
 | Frontend | React 19 |
-| Bundler | Vite 7 |
+| Bundler | Vite 8 |
 | Routeur | TanStack Router |
 | CSS | PandaCSS |
 | Tests | Vitest |
