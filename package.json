@@ -1,5 +1,5 @@
 {
-    "name": "@arrhes/fec",
+    "name": "@comptasse/fec",
     "private": true,
     "license": "AGPL-3.0-only",
     "scripts": {
@@ -15,9 +15,9 @@
         "test:e2e": "playwright test --config=tests/playwright.config.ts"
     },
     "devDependencies": {
-        "@biomejs/biome": "2.3.15",
-        "@playwright/test": "1.58.2",
-        "playwright": "1.58.2"
+        "@biomejs/biome": "2.5.14",
+        "@playwright/test": "1.63.0",
+        "playwright": "1.63.0"
     },
     "workspaces": [
         "./packages/*"

@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_PREFIX: ghcr.io/arrhes/fec
+  IMAGE_PREFIX: ghcr.io/comptasse/fec
 
 jobs:
   build-and-push:
@@ -55,7 +55,7 @@ jobs:
           VERSION: ${{ steps.version.outputs.version }}
         run: |
           SRC="fec:${VERSION}"
-          DEST="${IMAGE_PREFIX}/website"
+          DEST="${IMAGE_PREFIX}"
 
           docker tag "${SRC}" "${DEST}:${VERSION}"
           docker push "${DEST}:${VERSION}"

@@ -4,10 +4,10 @@ import { RootLayout } from "../features/rootLayout.js"
 
 const DEFAULT_DESCRIPTION =
     "Validez votre Fichier des Écritures Comptables (FEC) selon l'article A47 A-1 du Livre des procédures fiscales. Gratuit, open source, 100\u00a0% local."
-const SITE_NAME = "FEC - Arrhes"
-const BASE_URL = "https://fec.arrhes.com"
+const SITE_NAME = "FEC - Comptasse"
+const BASE_URL = "https://fec.comptasse.com"
 const OG_IMAGE_URL = `${BASE_URL}/og.png`
-const OG_IMAGE_ALT = "FEC - Arrhes - Outil de validation de Fichier des Écritures Comptables"
+const OG_IMAGE_ALT = "FEC - Comptasse - Outil de validation de Fichier des Écritures Comptables"
 
 export const rootLayoutRoute = createRootRouteWithContext<{
     title: string | undefined
@@ -19,7 +19,7 @@ export const rootLayoutRoute = createRootRouteWithContext<{
             <span>Chargement...</span>
         </div>
     ),
-    beforeLoad: (_ctx) => { },
+    beforeLoad: (_ctx) => {},
     component: () => {
         const matches = useRouterState({ select: (s) => s.matches })
         const pathname = useRouterState({ select: (s) => s.location.pathname })
@@ -40,66 +40,66 @@ export const rootLayoutRoute = createRootRouteWithContext<{
         // JSON-LD: WebSite (homepage only)
         const websiteJsonLd = isHomePage
             ? {
-                "@context": "https://schema.org",
-                "@type": "WebSite",
-                name: SITE_NAME,
-                url: BASE_URL,
-                description: DEFAULT_DESCRIPTION,
-                inLanguage: "fr-FR",
-                publisher: {
-                    "@type": "Organization",
-                    name: "Barbote SAS",
-                    url: "https://arrhes.com",
-                },
-            }
+                  "@context": "https://schema.org",
+                  "@type": "WebSite",
+                  name: SITE_NAME,
+                  url: BASE_URL,
+                  description: DEFAULT_DESCRIPTION,
+                  inLanguage: "fr-FR",
+                  publisher: {
+                      "@type": "Organization",
+                      name: "Barbote SAS",
+                      url: "https://comptasse.com",
+                  },
+              }
             : null
 
         // JSON-LD: SoftwareApplication (homepage only)
         const softwareJsonLd = isHomePage
             ? {
-                "@context": "https://schema.org",
-                "@type": "SoftwareApplication",
-                name: SITE_NAME,
-                url: BASE_URL,
-                applicationCategory: "BusinessApplication",
-                operatingSystem: "Web",
-                description: DEFAULT_DESCRIPTION,
-                inLanguage: "fr-FR",
-                license: "https://www.gnu.org/licenses/agpl-3.0.html",
-                offers: {
-                    "@type": "Offer",
-                    price: "0",
-                    priceCurrency: "EUR",
-                    description: "Outil gratuit et open source",
-                },
-                publisher: {
-                    "@type": "Organization",
-                    name: "Barbote SAS",
-                    url: "https://arrhes.com",
-                },
-            }
+                  "@context": "https://schema.org",
+                  "@type": "SoftwareApplication",
+                  name: SITE_NAME,
+                  url: BASE_URL,
+                  applicationCategory: "BusinessApplication",
+                  operatingSystem: "Web",
+                  description: DEFAULT_DESCRIPTION,
+                  inLanguage: "fr-FR",
+                  license: "https://www.gnu.org/licenses/agpl-3.0.html",
+                  offers: {
+                      "@type": "Offer",
+                      price: "0",
+                      priceCurrency: "EUR",
+                      description: "Outil gratuit et open source",
+                  },
+                  publisher: {
+                      "@type": "Organization",
+                      name: "Barbote SAS",
+                      url: "https://comptasse.com",
+                  },
+              }
             : null
 
         // JSON-LD: BreadcrumbList (non-homepage pages)
         const breadcrumbJsonLd = !isHomePage
             ? {
-                "@context": "https://schema.org",
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                    {
-                        "@type": "ListItem",
-                        position: 1,
-                        name: "Accueil",
-                        item: BASE_URL,
-                    },
-                    {
-                        "@type": "ListItem",
-                        position: 2,
-                        name: rawTitle,
-                        item: canonicalUrl,
-                    },
-                ],
-            }
+                  "@context": "https://schema.org",
+                  "@type": "BreadcrumbList",
+                  itemListElement: [
+                      {
+                          "@type": "ListItem",
+                          position: 1,
+                          name: "Accueil",
+                          item: BASE_URL,
+                      },
+                      {
+                          "@type": "ListItem",
+                          position: 2,
+                          name: rawTitle,
+                          item: canonicalUrl,
+                      },
+                  ],
+              }
             : null
 
         return (

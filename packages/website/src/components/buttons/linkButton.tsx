@@ -1,4 +1,4 @@
-import { Link, LinkOptions } from "@tanstack/react-router"
+import { Link, type LinkOptions } from "@tanstack/react-router"
 import type { ComponentProps, MouseEventHandler, ReactNode } from "react"
 import { css } from "../../../styled-system/css/css"
 import { cx } from "../../../styled-system/css/cx"

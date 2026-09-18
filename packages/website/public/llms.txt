@@ -1,8 +1,8 @@
-# Arrhes FEC
+# Comptasse FEC
 
-> Arrhes FEC est un outil gratuit et open source de validation de Fichiers des Écritures Comptables (FEC) conforme à l'article A47 A-1 du Livre des procédures fiscales.
+> Comptasse FEC est un outil gratuit et open source de validation de Fichiers des Écritures Comptables (FEC) conforme à l'article A47 A-1 du Livre des procédures fiscales.
 
-Arrhes FEC est accessible à l'adresse https://fec.arrhes.com. L'ensemble du traitement est effectué localement dans le navigateur - aucune donnée n'est transmise à un serveur.
+Comptasse FEC est accessible à l'adresse https://fec.comptasse.com. L'ensemble du traitement est effectué localement dans le navigateur - aucune donnée n'est transmise à un serveur.
 
 ## Fonctionnalités
 
@@ -16,13 +16,13 @@ Arrhes FEC est accessible à l'adresse https://fec.arrhes.com. L'ensemble du tra
 
 ## Éditeur
 
-Arrhes FEC est édité par Barbote SAS, société par actions simplifiée immatriculée au RCS sous le numéro 908 719 503.
+Comptasse FEC est édité par Barbote SAS, société par actions simplifiée immatriculée au RCS sous le numéro 908 719 503.
 
 - Siège social : 93 rue Sedaine, 75011 Paris, France
-- Contact : contact@arrhes.com
+- Contact : contact@comptasse.com
 
 ## Liens
 
-- [Accueil](https://fec.arrhes.com): Page d'accueil et outil de validation FEC
-- [Mentions légales](https://fec.arrhes.com/mentions-legales): Informations légales et politique de confidentialité
-- [Code source](https://github.com/arrhes): Dépôt GitHub du projet (licence AGPL-3.0)
+- [Accueil](https://fec.comptasse.com): Page d'accueil et outil de validation FEC
+- [Mentions légales](https://fec.comptasse.com/mentions-legales): Informations légales et politique de confidentialité
+- [Code source](https://github.com/comptasse): Dépôt GitHub du projet (licence AGPL-3.0)

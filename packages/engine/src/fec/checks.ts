@@ -177,7 +177,7 @@ export function checkCompteNum(parsed: FecParsedFile): FecCheckResult[] {
 
     for (let i = 0; i < parsed.entries.length; i++) {
         const entry = parsed.entries[i]!
-        const value = entry["CompteNum"]
+        const value = entry.CompteNum
         if (value && value.length >= 3) {
             const first3 = value.substring(0, 3)
             if (!/^\d{3}$/.test(first3)) {
@@ -267,8 +267,8 @@ export function checkDebitCredit(parsed: FecParsedFile): FecCheckResult[] {
         const entry = parsed.entries[i]!
 
         if (hasDebitCredit) {
-            const debit = entry["Debit"]?.trim() ?? ""
-            const credit = entry["Credit"]?.trim() ?? ""
+            const debit = entry.Debit?.trim() ?? ""
+            const credit = entry.Credit?.trim() ?? ""
             if (debit === "" && credit === "") {
                 results.push({
                     id: "DEBIT_CREDIT",
@@ -280,8 +280,8 @@ export function checkDebitCredit(parsed: FecParsedFile): FecCheckResult[] {
         }
 
         if (hasMontantSens) {
-            const montant = entry["Montant"]?.trim() ?? ""
-            const sens = entry["Sens"]?.trim() ?? ""
+            const montant = entry.Montant?.trim() ?? ""
+            const sens = entry.Sens?.trim() ?? ""
             if (montant === "" || sens === "") {
                 results.push({
                     id: "DEBIT_CREDIT",
@@ -307,7 +307,7 @@ export function checkSensValues(parsed: FecParsedFile): FecCheckResult[] {
 
     for (let i = 0; i < parsed.entries.length; i++) {
         const entry = parsed.entries[i]!
-        const value = entry["Sens"]
+        const value = entry.Sens
         if (value && value.trim() !== "" && !validValues.has(value.trim())) {
             results.push({
                 id: "SENS_VALUES",
@@ -341,7 +341,7 @@ export function checkChronologicalOrder(parsed: FecParsedFile): FecCheckResult[]
 
     for (let i = 0; i < parsed.entries.length; i++) {
         const entry = parsed.entries[i]!
-        const validDate = entry["ValidDate"] ?? ""
+        const validDate = entry.ValidDate ?? ""
 
         if (validDate && previousDate && validDate < previousDate) {
             results.push({
@@ -371,7 +371,7 @@ export function checkEcritureNumSequence(parsed: FecParsedFile): FecCheckResult[
     const nums: string[] = []
 
     for (const entry of parsed.entries) {
-        const num = entry["EcritureNum"] ?? ""
+        const num = entry.EcritureNum ?? ""
         if (num && !seen.has(num)) {
             seen.add(num)
             nums.push(num)
@@ -408,8 +408,8 @@ export function checkOpeningEntries(parsed: FecParsedFile): FecCheckResult[] {
     // Opening entries typically use journal code starting with "AN", "OD" or "RAN"
     // or the EcritureLib contains "a-nouveau" / "a nouveau" / "report"
     const first = parsed.entries[0]!
-    const journalCode = (first["JournalCode"] ?? "").toUpperCase()
-    const lib = (first["EcritureLib"] ?? "").toLowerCase()
+    const journalCode = (first.JournalCode ?? "").toUpperCase()
+    const lib = (first.EcritureLib ?? "").toLowerCase()
 
     const isOpeningJournal =
         journalCode === "AN" || journalCode === "RAN" || journalCode === "OD" || journalCode.startsWith("AN")
@@ -448,7 +448,7 @@ export function checkDebitCreditBalance(parsed: FecParsedFile): FecCheckResult[]
 
     for (let i = 0; i < parsed.entries.length; i++) {
         const entry = parsed.entries[i]!
-        const num = entry["EcritureNum"] ?? ""
+        const num = entry.EcritureNum ?? ""
         if (!num) continue
 
         if (!groups.has(num)) {
@@ -456,8 +456,8 @@ export function checkDebitCreditBalance(parsed: FecParsedFile): FecCheckResult[]
         }
         const group = groups.get(num)!
 
-        const debit = parseDecimal(entry["Debit"] ?? "")
-        const credit = parseDecimal(entry["Credit"] ?? "")
+        const debit = parseDecimal(entry.Debit ?? "")
+        const credit = parseDecimal(entry.Credit ?? "")
         group.debit += debit
         group.credit += credit
     }
@@ -553,8 +553,8 @@ export function checkPieceDateCoherence(parsed: FecParsedFile): FecCheckResult[]
 
     for (let i = 0; i < parsed.entries.length; i++) {
         const entry = parsed.entries[i]!
-        const pieceDate = entry["PieceDate"] ?? ""
-        const ecritureDate = entry["EcritureDate"] ?? ""
+        const pieceDate = entry.PieceDate ?? ""
+        const ecritureDate = entry.EcritureDate ?? ""
 
         if (
             pieceDate &&
@@ -629,8 +629,8 @@ export function checkDebitCreditExclusive(parsed: FecParsedFile): FecCheckResult
 
     for (let i = 0; i < parsed.entries.length; i++) {
         const entry = parsed.entries[i]!
-        const debitStr = entry["Debit"]?.trim() ?? ""
-        const creditStr = entry["Credit"]?.trim() ?? ""
+        const debitStr = entry.Debit?.trim() ?? ""
+        const creditStr = entry.Credit?.trim() ?? ""
 
         // Only check lines where both fields have valid numeric values
         if (debitStr === "" || creditStr === "") continue

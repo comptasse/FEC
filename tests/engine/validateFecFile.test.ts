@@ -1,8 +1,8 @@
 import { readFileSync } from "node:fs"
 import path from "node:path"
 import { describe, expect, it } from "vitest"
+import type { FecValidationResult } from "../../packages/engine/src/fec/types.js"
 import { validateFecFile } from "../../packages/engine/src/fec/validate.js"
-import type { FecCheckResult, FecValidationResult } from "../../packages/engine/src/fec/types.js"
 
 const TXT_SAMPLES_DIR = path.resolve(__dirname, "../../samples/txt")
 const XML_SAMPLES_DIR = path.resolve(__dirname, "../../samples/xml")
@@ -15,28 +15,8 @@ function readXmlSample(fileName: string): string {
     return readFileSync(path.join(XML_SAMPLES_DIR, fileName), "utf-8")
 }
 
-function getCheckIds(result: FecValidationResult): string[] {
-    return result.checks.map((c) => c.id)
-}
-
-function getErrorIds(result: FecValidationResult): string[] {
-    return result.checks.filter((c) => c.severity === "error").map((c) => c.id)
-}
-
-function getWarningIds(result: FecValidationResult): string[] {
-    return result.checks.filter((c) => c.severity === "warning").map((c) => c.id)
-}
-
-function hasCheck(result: FecValidationResult, id: string): boolean {
-    return result.checks.some((c) => c.id === id)
-}
-
 function hasError(result: FecValidationResult, id: string): boolean {
     return result.checks.some((c) => c.id === id && c.severity === "error")
-}
-
-function hasWarning(result: FecValidationResult, id: string): boolean {
-    return result.checks.some((c) => c.id === id && c.severity === "warning")
 }
 
 // ---------------------------------------------------------------------------

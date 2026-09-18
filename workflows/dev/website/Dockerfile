@@ -6,7 +6,7 @@
 # Dependencies are installed inside the container on startup (CMD).
 # ==============================================================================
 
-ARG NODE_VERSION="22.16.0"
+ARG NODE_VERSION="24"
 ARG PNPM_VERSION="10.12.1"
 
 FROM node:${NODE_VERSION}-bullseye-slim

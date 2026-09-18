@@ -4,7 +4,7 @@
 # Multi-stage build: build React app with Vite, serve with Nginx
 # ==============================================================================
 
-FROM node:22-alpine AS base
+FROM node:24-alpine AS base
 RUN npm i -g pnpm@latest
 
 # Define build arguments for Vite environment variables
@@ -24,7 +24,7 @@ WORKDIR /root
 COPY . .
 RUN CI=true pnpm install --no-frozen-lockfile
 ARG CACHEBUST
-RUN pnpm --filter='@arrhes/fec-engine' run test
+RUN pnpm --filter='@comptasse/fec-engine' run test
 RUN pnpm run build
 
 # Deploy stage - serve static files with Nginx

@@ -1,5 +1,5 @@
-import { css } from "../../../styled-system/css/css"
 import { Link } from "@tanstack/react-router"
+import { css } from "../../../styled-system/css/css"
 
 export function NotFoundPage() {
     return (

@@ -1,33 +1,33 @@
-import type { FecParsedFile, FecValidationResult } from "./types.js"
-import { parseFlatFile } from "./parseFlatFile.js"
-import { parseXmlFile } from "./parseXmlFile.js"
 import {
+    checkChronologicalOrder,
+    checkColumnCount,
+    checkColumnOrder,
+    checkCompteNum,
+    checkDateFormat,
+    checkDateValidity,
+    checkDateYearRange,
+    checkDebitCredit,
+    checkDebitCreditBalance,
+    checkDebitCreditExclusive,
+    checkEcritureNumSequence,
+    checkEmptyFile,
+    checkEmptyLines,
+    checkEncoding,
+    checkFieldCountMismatch,
     checkFileName,
     checkHeaderPresence,
-    checkColumnOrder,
-    checkColumnCount,
-    checkSeparator,
-    checkDateFormat,
-    checkNumericFormat,
-    checkCompteNum,
     checkMandatoryFields,
-    checkDebitCredit,
-    checkSensValues,
-    checkChronologicalOrder,
-    checkEcritureNumSequence,
-    checkOpeningEntries,
-    checkDebitCreditBalance,
-    checkEncoding,
-    checkEmptyFile,
-    checkDateValidity,
-    checkPieceDateCoherence,
-    checkFieldCountMismatch,
-    checkEmptyLines,
-    checkDebitCreditExclusive,
     checkNumericDotSeparator,
+    checkNumericFormat,
     checkNumericThousandsSeparator,
-    checkDateYearRange,
+    checkOpeningEntries,
+    checkPieceDateCoherence,
+    checkSensValues,
+    checkSeparator,
 } from "./checks.js"
+import { parseFlatFile } from "./parseFlatFile.js"
+import { parseXmlFile } from "./parseXmlFile.js"
+import type { FecParsedFile, FecValidationResult } from "./types.js"
 
 function detectFileType(fileName: string, content: string): "flat" | "xml" {
     const lower = fileName.toLowerCase()

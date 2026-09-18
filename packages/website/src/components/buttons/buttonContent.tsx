@@ -19,7 +19,7 @@ export type ButtonContentProps = {
     className?: string
 }
 
-export function renderButtonContent(
+export function useRenderButtonContent(
     props: ButtonContentProps,
     classes: Partial<Record<"container" | "leftIcon" | "text" | "rightIcon", string>>,
 ) {

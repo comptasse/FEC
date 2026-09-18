@@ -1,4 +1,4 @@
-import { readUserSessionRouteDefinition } from "@arrhes/application-metadata/routes"
+import { readUserSessionRouteDefinition } from "@comptasse/application-metadata/routes"
 import { getResponseBodyFromAPI } from "../getResponseBodyFromAPI.js"
 import { getIsAuthenticated } from "./getIsAuthenticated.js"
 

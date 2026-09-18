@@ -10,6 +10,6 @@ export const homeLayoutRoute = createRoute({
             <span>Chargement...</span>
         </div>
     ),
-    beforeLoad: () => { },
+    beforeLoad: () => {},
     component: () => <HomeLayout />,
 })
