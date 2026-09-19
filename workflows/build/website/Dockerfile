@@ -5,7 +5,8 @@
 # ==============================================================================
 
 FROM node:24-alpine AS base
-RUN npm i -g pnpm@latest
+ARG PNPM_VERSION="10.12.1"
+RUN npm i -g "pnpm@${PNPM_VERSION}"
 
 # Define build arguments for Vite environment variables
 ARG VITE_API_BASE_URL
