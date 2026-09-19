@@ -82,8 +82,8 @@ describe("parseXmlFile", () => {
                     for (const entry of result.entries) {
                         // JournalCode and JournalLib come from parent <journal> element
                         // They should be populated (possibly empty if the XML doesn't have them)
-                        expect(typeof entry["JournalCode"]).toBe("string")
-                        expect(typeof entry["JournalLib"]).toBe("string")
+                        expect(typeof entry.JournalCode).toBe("string")
+                        expect(typeof entry.JournalLib).toBe("string")
                     }
                 })
 
@@ -92,7 +92,7 @@ describe("parseXmlFile", () => {
                     const result = parseXmlFile(content, fileName)
 
                     for (const entry of result.entries) {
-                        const compteNum = entry["CompteNum"]!
+                        const compteNum = entry.CompteNum!
                         if (compteNum.length > 0) {
                             // The first 3 characters should be digits per FEC spec
                             expect(compteNum.length).toBeGreaterThanOrEqual(3)
@@ -156,8 +156,8 @@ describe("parseXmlFile", () => {
             const result = parseXmlFile(content, "montantsens_d.xml")
 
             expect(result.entries.length).toBe(1)
-            expect(result.entries[0]!["Debit"]).toBe("1000.50")
-            expect(result.entries[0]!["Credit"]).toBe("0")
+            expect(result.entries[0]!.Debit).toBe("1000.50")
+            expect(result.entries[0]!.Credit).toBe("0")
         })
 
         it("should convert Montant with Sens=C to Credit", () => {
@@ -185,8 +185,8 @@ describe("parseXmlFile", () => {
             const result = parseXmlFile(content, "montantsens_c.xml")
 
             expect(result.entries.length).toBe(1)
-            expect(result.entries[0]!["Debit"]).toBe("0")
-            expect(result.entries[0]!["Credit"]).toBe("500.25")
+            expect(result.entries[0]!.Debit).toBe("0")
+            expect(result.entries[0]!.Credit).toBe("500.25")
         })
 
         it("should convert Montant with Sens=+1 to Debit", () => {
@@ -213,8 +213,8 @@ describe("parseXmlFile", () => {
                 </comptabilite>`
             const result = parseXmlFile(content, "montantsens_plus1.xml")
 
-            expect(result.entries[0]!["Debit"]).toBe("750")
-            expect(result.entries[0]!["Credit"]).toBe("0")
+            expect(result.entries[0]!.Debit).toBe("750")
+            expect(result.entries[0]!.Credit).toBe("0")
         })
 
         it("should convert Montant with Sens=-1 to Credit", () => {
@@ -241,8 +241,8 @@ describe("parseXmlFile", () => {
                 </comptabilite>`
             const result = parseXmlFile(content, "montantsens_minus1.xml")
 
-            expect(result.entries[0]!["Debit"]).toBe("0")
-            expect(result.entries[0]!["Credit"]).toBe("250")
+            expect(result.entries[0]!.Debit).toBe("0")
+            expect(result.entries[0]!.Credit).toBe("250")
         })
 
         it("should not overwrite existing Debit/Credit when Montant/Sens also present", () => {
@@ -272,8 +272,8 @@ describe("parseXmlFile", () => {
             const result = parseXmlFile(content, "both.xml")
 
             // Existing Debit/Credit should take precedence
-            expect(result.entries[0]!["Debit"]).toBe("999")
-            expect(result.entries[0]!["Credit"]).toBe("0")
+            expect(result.entries[0]!.Debit).toBe("999")
+            expect(result.entries[0]!.Credit).toBe("0")
         })
 
         it("should handle invalid Sens value gracefully", () => {
@@ -301,8 +301,8 @@ describe("parseXmlFile", () => {
             const result = parseXmlFile(content, "invalidsens.xml")
 
             // Invalid Sens = empty Debit/Credit, checks will catch it
-            expect(result.entries[0]!["Debit"]).toBe("")
-            expect(result.entries[0]!["Credit"]).toBe("")
+            expect(result.entries[0]!.Debit).toBe("")
+            expect(result.entries[0]!.Credit).toBe("")
         })
     })
 })

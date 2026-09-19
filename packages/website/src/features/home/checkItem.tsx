@@ -1,6 +1,5 @@
-import type { FecCheckResult } from "@arrhes/fec-engine"
+import type { FecCheckResult } from "@comptasse/fec-engine"
 import { css } from "../../../styled-system/css/css"
-
 
 export function CheckItem({ check }: { check: FecCheckResult }) {
     const isError = check.severity === "error"
@@ -16,7 +15,7 @@ export function CheckItem({ check }: { check: FecCheckResult }) {
                 borderBottomColor: "neutral/5",
                 _last: {
                     borderBottom: "none",
-                }
+                },
             })}
         >
             {/* Severity indicator */}

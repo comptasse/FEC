@@ -13,7 +13,6 @@ export function HomeLayout() {
                 minHeight: "100%",
                 display: "flex",
                 flexDirection: "column",
-                backgroundColor: "background",
             })}
         >
             {/* ------------------------------------------------------------------ */}
@@ -52,23 +51,17 @@ export function HomeLayout() {
                             gap: "0.5rem",
                         })}
                     >
-                        <a href="https://arrhes.com" target="_blank" rel="noopener noreferrer">
-                            <ButtonGhostContent
-                                leftIcon={<Logo />}
-                                text="Arrhes"
-                            />
+                        <a href="https://comptasse.com" target="_blank" rel="noopener noreferrer">
+                            <ButtonGhostContent leftIcon={<Logo />} text="Comptasse" />
                         </a>
 
-                        <span className={css({ color: "neutral/20", display: { base: "none", sm: "block" } })}>
-                            /
-                        </span>
+                        <span className={css({ color: "neutral/20", display: { base: "none", sm: "block" } })}>/</span>
 
-                        <LinkButton
-                            to="/"
-                        >
+                        <LinkButton to="/">
                             <ButtonGhostContent
                                 leftIcon={<IconClipboardList />}
-                                text="Fichier des Écritures Comptables" />
+                                text="Fichier des Écritures Comptables"
+                            />
                         </LinkButton>
                     </div>
 
@@ -79,7 +72,7 @@ export function HomeLayout() {
                             gap: "0.5rem",
                         })}
                     >
-                        <a href="https://github.com/arrhes/fec" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/comptasse/fec" target="_blank" rel="noopener noreferrer">
                             <ButtonGhostContent leftIcon={<IconBrandGithub />} />
                         </a>
                     </nav>
@@ -88,12 +81,13 @@ export function HomeLayout() {
 
             <main
                 className={css({
-                    height: "100%",
+                                   minHeight: "100%",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "start",
                     alignItems: "center",
                     gap: "0.5rem",
+                    marginBottom: "auto",
                 })}
             >
                 <Outlet />

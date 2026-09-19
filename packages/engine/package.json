@@ -1,5 +1,5 @@
 {
-    "name": "@arrhes/fec-engine",
+    "name": "@comptasse/fec-engine",
     "type": "module",
     "private": true,
     "scripts": {
@@ -9,14 +9,14 @@
         "test:watch": "vitest"
     },
     "devDependencies": {
-        "@types/node": "24.10.1",
-        "jsdom": "26.1.0",
-        "typescript": "5.9.3",
-        "vitest": "4.0.18"
+        "@types/node": "26.6.1",
+        "jsdom": "30.1.0",
+        "typescript": "7.0.2",
+        "vitest": "5.0.1"
     },
     "dependencies": {
-        "nanoid": "5.1.6",
-        "valibot": "1.2.0"
+        "nanoid": "6.0.1",
+        "valibot": "1.5.0"
     },
     "exports": {
         ".": {

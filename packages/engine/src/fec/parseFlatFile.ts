@@ -1,6 +1,6 @@
 import type { FecEntry, FecParsedFile, FecParsedLineIssue } from "./types.js"
 
-export function parseFlatFile(content: string, fileName: string): FecParsedFile {
+export function parseFlatFile(content: string, _fileName: string): FecParsedFile {
     // Split lines, handling both \r\n and \n
     const lines = content.split(/\r?\n/)
 

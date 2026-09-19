@@ -44,7 +44,7 @@ function convertMontantSens(montant: string, sens: string): { debit: string; cre
     return { debit: "", credit: "" }
 }
 
-export function parseXmlFile(content: string, fileName: string): FecParsedFile {
+export function parseXmlFile(content: string, _fileName: string): FecParsedFile {
     const parser = new DOMParser()
     const doc = parser.parseFromString(content, "application/xml")
 

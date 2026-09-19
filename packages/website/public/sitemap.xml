@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://fec.arrhes.com/</loc>
+        <loc>https://fec.comptasse.com/</loc>
         <lastmod>2026-03-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://fec.arrhes.com/mentions-legales</loc>
+        <loc>https://fec.comptasse.com/mentions-legales</loc>
         <lastmod>2026-03-23</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>

@@ -7,8 +7,7 @@ export const legalRoute = createRoute({
     path: "/mentions-legales",
     beforeLoad: () => ({
         title: "Mentions légales",
-        description:
-            "Mentions légales et politique de confidentialité du service Arrhes FEC.",
+        description: "Mentions légales et politique de confidentialité du service Comptasse FEC.",
     }),
     component: () => <LegalPage />,
 })

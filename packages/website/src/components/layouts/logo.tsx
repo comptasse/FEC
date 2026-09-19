@@ -1,7 +1,7 @@
-import type { ComponentProps } from "react";
-import { css } from "../../../styled-system/css/css";
-import { cx } from "../../../styled-system/css/cx";
-import { token } from "../../../styled-system/tokens/index";
+import type { ComponentProps } from "react"
+import { css } from "../../../styled-system/css/css"
+import { cx } from "../../../styled-system/css/cx"
+import { token } from "../../../styled-system/tokens/index"
 
 export function Logo(props: { size?: number; className?: ComponentProps<"svg">["className"] }) {
     return (
@@ -17,7 +17,7 @@ export function Logo(props: { size?: number; className?: ComponentProps<"svg">["
                 css({
                     padding: "0.125rem",
                 }),
-                props.className
+                props.className,
             )}
         >
             <g opacity=".2" fill="currentColor" stroke="none">

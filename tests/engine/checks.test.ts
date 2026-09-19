@@ -1,32 +1,32 @@
 import { describe, expect, it } from "vitest"
 import {
+    checkChronologicalOrder,
+    checkColumnCount,
+    checkColumnOrder,
+    checkCompteNum,
+    checkDateFormat,
+    checkDateValidity,
+    checkDateYearRange,
+    checkDebitCredit,
+    checkDebitCreditBalance,
+    checkDebitCreditExclusive,
+    checkEcritureNumSequence,
+    checkEmptyFile,
+    checkEmptyLines,
+    checkEncoding,
+    checkFieldCountMismatch,
     checkFileName,
     checkHeaderPresence,
-    checkColumnOrder,
-    checkColumnCount,
-    checkSeparator,
-    checkDateFormat,
-    checkNumericFormat,
-    checkCompteNum,
     checkMandatoryFields,
-    checkDebitCredit,
-    checkSensValues,
-    checkChronologicalOrder,
-    checkEcritureNumSequence,
-    checkOpeningEntries,
-    checkDebitCreditBalance,
-    checkEncoding,
-    checkEmptyFile,
-    checkDateValidity,
-    checkPieceDateCoherence,
-    checkFieldCountMismatch,
-    checkEmptyLines,
-    checkDebitCreditExclusive,
     checkNumericDotSeparator,
+    checkNumericFormat,
     checkNumericThousandsSeparator,
-    checkDateYearRange,
+    checkOpeningEntries,
+    checkPieceDateCoherence,
+    checkSensValues,
+    checkSeparator,
 } from "../../packages/engine/src/fec/checks.js"
-import type { FecParsedFile, FecParsedLineIssue } from "../../packages/engine/src/fec/types.js"
+import type { FecParsedFile } from "../../packages/engine/src/fec/types.js"
 import { BIC_COLUMN_NAMES } from "../../packages/engine/src/fec/types.js"
 
 // ---------------------------------------------------------------------------
@@ -966,7 +966,7 @@ describe("checkFieldCountMismatch", () => {
 
     it("should return nothing when lineIssues is undefined", () => {
         const parsed = makeParsed()
-        delete (parsed as Record<string, unknown>)["lineIssues"]
+        delete (parsed as Record<string, unknown>).lineIssues
         expect(checkFieldCountMismatch(parsed)).toEqual([])
     })
 })

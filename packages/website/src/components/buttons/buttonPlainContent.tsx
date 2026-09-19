@@ -1,5 +1,5 @@
 import { sva } from "../../../styled-system/css/sva"
-import { type ButtonContentProps, renderButtonContent } from "./buttonContent"
+import { type ButtonContentProps, useRenderButtonContent } from "./buttonContent"
 
 const plainRecipe = sva({
     slots: ["container", "leftIcon", "text", "rightIcon"],
@@ -77,5 +77,5 @@ const plainRecipe = sva({
 
 export function ButtonPlainContent(props: ButtonContentProps) {
     const classes = plainRecipe({ color: props.color ?? "neutral" })
-    return renderButtonContent(props, classes)
+    return useRenderButtonContent(props, classes)
 }
